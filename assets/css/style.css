@@ -6,7 +6,7 @@
 
 html,
 body {
-  font-family: 'Arial','Helvetica Neue',Helvetica,sans-serif;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
   color: #777;
   font-size: 16px;
   line-height: 1.5;
@@ -51,9 +51,9 @@ li {
 h1,
 h2,
 h3 {
-  font-family: 'Georgia',Times,Times New Roman,serif;
+  font-family: 'Georgia', Times, Times New Roman, serif;
   color: #4aaaa5;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.5em;
 }
 
@@ -346,42 +346,47 @@ https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element
 */
 
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
+}
+
+.container {
+  min-height: 100%; /* The .container is not touching the footer on larger screens. */
 }
 
 body {
-    margin: 0 0 25px; /* bottom = footer height */
+  margin: 0 0 25px; /* bottom = footer height */
 }
 
 footer {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    height: 25px;
-    width: 960px;
-    margin-left: -480px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 25px;
+  width: 960px;
+  margin-left: -480px;
 }
 
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 970px) {
 
   .container {
-    max-width: 700px;
+    max-width: 970px;
   }
 
   h1 {
-    max-width: 250px;
+    max-width: 500px;
     display: block;
     margin: 0 auto;
   }
 
   nav {
-    max-width: 250px;
+    max-width: 500px;
     float: none;
     margin: 30px auto;
+    text-align: center;
   }
 
   nav li.pipe::after {
@@ -390,7 +395,7 @@ footer {
   }
 
   main {
-    max-width: 700px;
+    max-width: 970px;
   }
 
   .about,
@@ -404,13 +409,42 @@ footer {
   .portfolio,
   .contact,
   .connect {
-    max-width: 700px;
+    max-width: 970px;
+    margin: 20px;
   }
+
+  .portfolio {
+    overflow: auto;
+  }
+
+  figure {
+    float: left;
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+
+  figure:nth-child(2n) {
+    margin-left: 10%;
+  }
+
+  .name input,
+  .email input {
+    padding: 10px;
+    width: 95%;
+  }
+
+  .message textarea {
+    width: 95%;
+    height: 200px;
+  }
+
+}
+
+@media screen and (max-width: 810px) {
 
   figure {
     float: none;
     margin: 40px auto;
-
   }
 
   figure:nth-child(2n) {
