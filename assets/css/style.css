@@ -13,9 +13,13 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 960px;
   background-color: #fff;
   margin: 50px auto;
+}
+
+main {
+  margin: 0 auto;
 }
 
 header {
@@ -25,8 +29,12 @@ header {
 }
 
 main {
-  max-width: 1000px;
+  max-width: 960px;
+  background-color: #eef;
   background-image: url("../images/concrete_seamless/concrete_seamless.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-top: 3px solid #ddd;
   overflow: auto;
 }
@@ -56,7 +64,7 @@ h3 {
 h1 {
   background: #4aaaa5;
   display: inline-block;
-  width: 30%;
+  width: 300px;
   color: #fff;
   padding: 30px 10px;
   text-align: center;
@@ -121,11 +129,11 @@ nav a:hover {
 .about,
 .portfolio,
 .contact {
-  max-width: 640px;
+  max-width: 650px;
 }
 
 .connect {
-  max-width: 320px;
+  max-width: 270px;
 }
 
 .separator {
@@ -145,17 +153,17 @@ nav a:hover {
 .about,
 .portfolio,
 .contact {
-  margin-left: 1.2%; /*12px*/
-  margin-right: 0.8%; /*8px*/
+  margin-left: 12px;
+  margin-right: 8px;
 }
 
 .connect {
-  margin-left: 0.8%; /*8px*/
-  margin-right: 1.2%; /*12px*/
+  margin-left: 8px;
+  margin-right: 12px;
 }
 
 .about p {
-  margin-bottom: 1.25em; /*20px;*/
+  margin-bottom: 20px;
 }
 
 .about-img {
@@ -173,9 +181,11 @@ nav a:hover {
 
 .connect li {
   display: inline-block;
-  margin: 10px 5px;
-  padding: 5px;
-  width: 80px;
+  margin: 5px 1px;
+  padding: 5px 0;
+  width: 70px;
+  -webkit-box-shadow: 0 0 1px #555;
+  box-shadow: 0 0 1px #555;
 }
 
 .connect p {
@@ -242,15 +252,14 @@ nav a:hover {
 figure {
   float: left;
   width: 265px;
-  /*margin: 15px 30px 15px 3px;*/
-  margin: 15px 27.5px 15px 3px;
+  /*margin: 15px 20px;*/ /* Starting float position */
+  margin: 15px 35px 15px 5px;
   padding: 0;
   position: relative;
 }
 
 figure:nth-child(2n) {
-  /*margin: 15px 0 15px 33px;*/
-  margin: 15px 0 15px 27.5px;
+  margin: 15px 5px 15px 35px;
 }
 
 figure h3 {
@@ -273,6 +282,9 @@ figure h3:hover {
 figure img {
   display: block;
   width: 100%;
+  -webkit-box-shadow: 0 0 1px #555;
+  box-shadow: 0 0 1px #555;
+
 }
 
 
@@ -317,10 +329,36 @@ figure img {
 /* FOOTER */
 
 footer {
-  background-color: #666666;
-  padding: 20px;
+  background-color: #666;
+  padding: 25px;
   font-size: 0.625rem;
   text-align: center;
   color: #dbd6d6;
   border-top: 5px solid #4aaaa5;
+}
+
+
+/* STICKY FOOTER */
+/* 
+Thank You -
+http://mystrd.at/modern-clean-css-sticky-footer
+https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element
+*/
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 25px; /* bottom = footer height */
+}
+
+footer {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 25px;
+    width: 960px;
+    margin-left: -480px;
 }
